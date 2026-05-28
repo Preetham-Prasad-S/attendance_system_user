@@ -1,1 +1,0 @@
-enum StaffLocationEnum { inPremises }
