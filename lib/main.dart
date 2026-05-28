@@ -1,5 +1,6 @@
 import 'package:attendance_system_user/features/presentation/screens/login_desktop_screen.dart';
 import 'package:attendance_system_user/features/presentation/screens/login_mobile_screen.dart';
+import 'package:attendance_system_user/features/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -18,14 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Staff Attendance App",
 
-      home: LayoutBuilder(
-        builder: (context, constraints) {
-          if (constraints.maxWidth > 400) {
-            return LoginDesktopScreen();
-          }
-          return LoginMobileScreen();
-        },
-      ),
+      home: LoginScreen(),
     );
   }
 }
