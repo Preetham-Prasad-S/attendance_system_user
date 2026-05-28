@@ -5,6 +5,8 @@ class LoginDesktopScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text("Desktop Screen")));
+    return const Scaffold(
+      body: Center(child: Image(image: AssetImage("login-screen-image.png"))),
+    );
   }
 }
