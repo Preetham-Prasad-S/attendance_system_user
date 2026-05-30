@@ -3,8 +3,8 @@ import 'package:attendance_system_user/features/presentation/widgets/login_form_
 import 'package:attendance_system_user/features/presentation/widgets/auth_picture_widget.dart';
 import 'package:flutter/material.dart';
 
-class LoginDesktopScreen extends StatelessWidget {
-  const LoginDesktopScreen({super.key});
+class SignupDesktopScreen extends StatelessWidget {
+  const SignupDesktopScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,11 @@ class LoginDesktopScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(child: AuthPictureWidget(image: "login-screen-picture.png",)),
+                Expanded(
+                  child: AuthPictureWidget(
+                    image: "signup-screen-picuture.jpeg",
+                  ),
+                ),
                 Expanded(child: LoginFormWidget()),
               ],
             ),
