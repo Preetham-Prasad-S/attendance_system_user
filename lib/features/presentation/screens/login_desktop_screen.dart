@@ -22,7 +22,9 @@ class LoginDesktopScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(child: AuthPictureWidget(image: "login-screen-picture.png",)),
+                Expanded(
+                  child: AuthPictureWidget(image: "login-screen-image.png"),
+                ),
                 Expanded(child: LoginFormWidget()),
               ],
             ),

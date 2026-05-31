@@ -19,7 +19,7 @@ class LoginFormWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          LoginFormTitleWidget(),
+          AuthTitleWidget(),
           SizedBox(height: 40),
           Text(
             "User Login",
@@ -35,14 +35,14 @@ class LoginFormWidget extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 children: [
-                  LoginTextField(
+                  AuthTextField(
                     labelText: "Email",
                     hintText: "eg : staff123@email.com",
                     icon: Icon(Ionicons.person_circle, size: 25),
                     isPassword: false,
                   ),
                   const SizedBox(height: 30),
-                  LoginTextField(
+                  AuthTextField(
                     labelText: "Password",
                     hintText: "• • • • • • • • • •  ",
                     icon: Icon(Ionicons.lock_closed),
@@ -62,32 +62,10 @@ class LoginFormWidget extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 30),
-                  ElevatedButton(
+                  AuthButtonWidget(
+                    text: "Login",
+                    icon: Icon(Ionicons.exit_outline, size: 25),
                     onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      minimumSize: Size(double.infinity, 65),
-                      foregroundColor: AppColors.whiteColor,
-                      backgroundColor: AppColors.blueColor,
-                      elevation: 2,
-                      shadowColor: const Color.fromARGB(255, 255, 255, 255),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Login",
-                          style: GoogleFonts.quicksand(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                        const SizedBox(width: 5),
-                        Icon(Ionicons.exit_outline, size: 25),
-                      ],
-                    ),
                   ),
                 ],
               ),
@@ -99,8 +77,51 @@ class LoginFormWidget extends StatelessWidget {
   }
 }
 
-class LoginFormTitleWidget extends StatelessWidget {
-  const LoginFormTitleWidget({super.key});
+class AuthButtonWidget extends StatelessWidget {
+  final String text;
+  final Icon icon;
+  final VoidCallback onPressed;
+  const AuthButtonWidget({
+    super.key,
+    required this.text,
+    required this.icon,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
+        minimumSize: Size(double.infinity, 65),
+        foregroundColor: AppColors.whiteColor,
+        backgroundColor: AppColors.blueColor,
+        elevation: 2,
+        shadowColor: const Color.fromARGB(255, 255, 255, 255),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            text,
+            style: GoogleFonts.quicksand(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+          const SizedBox(width: 5),
+          icon,
+        ],
+      ),
+    );
+  }
+}
+
+class AuthTitleWidget extends StatelessWidget {
+  const AuthTitleWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -131,12 +152,12 @@ class LoginFormTitleWidget extends StatelessWidget {
   }
 }
 
-class LoginTextField extends StatelessWidget {
+class AuthTextField extends StatelessWidget {
   final String labelText;
   final String hintText;
   final Icon icon;
   final bool isPassword;
-  const LoginTextField({
+  const AuthTextField({
     super.key,
     required this.labelText,
     required this.hintText,
