@@ -1,4 +1,4 @@
-import 'package:attendance_system_user/features/presentation/widgets/login_form_widget.dart';
+import 'package:attendance_system_user/features/auth/presentation/widgets/login_form_widget.dart';
 import 'package:flutter/material.dart';
 
 class LoginMobileScreen extends StatelessWidget {

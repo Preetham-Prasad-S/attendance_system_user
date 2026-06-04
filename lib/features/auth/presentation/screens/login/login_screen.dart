@@ -1,5 +1,5 @@
-import 'package:attendance_system_user/features/presentation/screens/login_desktop_screen.dart';
-import 'package:attendance_system_user/features/presentation/screens/login_mobile_screen.dart';
+import 'package:attendance_system_user/features/auth/presentation/screens/login/login_desktop_screen.dart';
+import 'package:attendance_system_user/features/auth/presentation/screens/login/login_mobile_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {

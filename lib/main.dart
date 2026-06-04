@@ -1,5 +1,4 @@
-import 'package:attendance_system_user/features/presentation/screens/login_screen.dart';
-import 'package:attendance_system_user/features/presentation/screens/signup_desktop_screen.dart';
+import 'package:attendance_system_user/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Staff Attendance App",
 
-      home: SignupDesktopScreen(),
+      home: HomeScreen(),
     );
   }
 }
